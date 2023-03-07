@@ -56,13 +56,19 @@
     <div>Loading, please wait...</div>
   </div>
   <a-scene
-      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+     arjs
       embedded
       renderer="logarithmicDepthBuffer: true;"
       vr-mode-ui="enabled: false"
       id="scene"
   >
-
+      <a-assets>
+        <a-asset-item
+          id="bowser"
+          src="/ar-viewer/dragon.glb"
+        >
+        </a-asset-item>
+      </a-assets>
     <a-nft
       type="nft"
       url="/ar-viewer/basa"
@@ -72,9 +78,10 @@
       smoothThreshold="5"
     >
         <a-entity
-          gltf-model="/ar-viewer/dragon.glb"
-          scale="5 5 5"
-          position="50 150 0"
+          id="bowser-model"
+          gltf-model="#bowser"
+          position="0 0 0"
+          scale="0.05 0.05 0.05"
           class="clickable"
         >
         </a-entity>
