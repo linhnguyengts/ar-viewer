@@ -29,10 +29,12 @@
     <div>Loading, please wait...</div>
   </div>
   <a-scene
-    vr-mode-ui="enabled: false;"
-    renderer="logarithmicDepthBuffer: true; precision: medium;"
-    embedded
-    arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
+      arjs
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
   >
     <!-- we use cors proxy to avoid cross-origin problems ATTENTION! you need to set up your server -->
     <a-nft
@@ -42,7 +44,6 @@
       smoothCount="10"
       smoothTolerance=".01"
       smoothThreshold="5"
-	  gesture-detector
     >
       <a-entity
         gltf-model="/ar-viewer/shark.glb"
