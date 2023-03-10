@@ -6,12 +6,14 @@
     <title>GeoAR.js demo</title>
     <script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
     <script src='aframe-ar.min.js'></script>
+	<script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
 </head>
 
 <link rel="stylesheet" href="index.css">
 
 <!-- Dynamically add places from Javascript -->
-<script src="places.js"></script>
+<!-- <script src="places.js"></script> -->
 
 <body style='margin: 0; overflow: hidden;'>
     <a-scene
@@ -20,7 +22,13 @@
         vr-mode-ui="enabled: false"
 		embedded
 		arjs='sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;'>
-
+		  <a-entity
+			gltf-model="/ar-viewer/shark.glb"
+			scale="5 5 5"
+			position="150 300 -100"
+			gesture-handler
+		  >
+		  </a-entity>
         <a-camera gps-camera rotation-reader>
 		</a-camera>
 	</a-scene>
